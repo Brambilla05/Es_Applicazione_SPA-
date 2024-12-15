@@ -1,37 +1,226 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      type="text/css" />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
    <link rel="stylesheet" type="text/css" href="./style.css" />
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-   <title>SPA semplice</title>
+   <title>SPA Lezioni</title>
 </head>
 
 <body>
    <div id="container" class="container">
-      <div id="pagina1" class="page">
-         <div class="row">Questo è il contenuto di pagina 1</div>
-         <div class="row"><a href="#pagina2">Questo è un link a pagina 2</a></div>
-         <div class="row"><a href="#pagina3">Questo è un link a pagina 3</a></div>                  
+      <div id="home" class="page">
+         <div class="row">
+            <h1>Benvenuti alla SPA Lezioni</h1>
+            <p>Seleziona una lezione:</p>
+            <ul>
+               <li><a href="#uml">Lezione UML</a></li>
+               <li><a href="#ambienti">Lezione deliverable, ambienti, dati</a></li>
+               <li><a href="#dati">Lezione wireframe e storyboard</a></li>
+            </ul>
+         </div>
       </div>
-      <div id="pagina2" class="page">
-         <div class="row"><a href="#pagina1">Questo è un link a pagina 1</a></div>
-         <div class="row">Questo è il contenuto di pagina 2</div>         
-         <div class="row"><a href="#pagina3">Questo è un link a pagina 3</a></div>                  
+
+
+      <div id="uml" class="page">
+         <div class="row">
+            <h2>Lezione: UML</h2>
+            <p>
+               UML (Unified Modeling Language) è un linguaggio visuale che ha come obiettivo quello di definire tecnicamente la struttura ed il comportamento di una applicazione. UML è un linguaggio rigoroso che riduce al minimo le ambiguità, espresso in modo visuale per essere rapidamente condiviso e modificato nel lavoro di gruppo.
+
+I diagrammi UML vanno a descrivere il progetto software in 3 aree:
+
+– il modello funzionale: serve a descrivere, tramite uno o più diagrammi le attività che svolgerà l’applicazione;
+
+– il modello statico: serve a descrivere la struttura dei moduli ed i componenti dell’applicazione;
+
+– il modello dinamico: serve a descrivere il comportamento dei componenti e dell’applicazione;
+
+Modello funzionale: il diagramma di casi d’uso
+Questo schema identifica tutti gli attori (cioè gli utenti) e tutti i casi d’uso di una applicazione e poi li collega tra loro. Nel caso di un progetto di prenotazione di stanze d’albergo ad esempio
+
+
+Esercizi:
+Definire casi d’uso di un registro elettronico individuando gli attori e per ciascun attore le attività.
+Definire i casi d’uso di un bancomat, gli attori coinvolti (sono 3) e le azioni svolte
+Definore i casi d’uso di una biblioteca.
+Il diagramma di classe/componente
+In questo modello vengono rappresentate direttamente le classi o i componenti di una applicazione. Questo diagramma identifica le classi/componenti coinvolte e le loro possibili relazioni:
+
+use: la classe/componente A usa la classe/componente B (dipendenza diretta);
+extends: la classe/componente A estende la classe/componente B (ereditarietà);
+implements: la classe A implementa il contratto/interfaccia B. L’uso delle interfacce è previsto solo nei linguaggi di programmazione ad oggetti completi (come C#, Typescript o Java) mentre non è prevista nei linguaggi non completi (come JS e Python).
+
+In questo esempio Class3 utilizza internamente Class2, che è una estensione di Class1, che a sua volta implementa l’interfaccia Interface.
+
+Esercizi:
+Definire il diagramma a componenti del progetto “prenotazioni albergo”
+Definire il diagramma a componenti del progetto “visite specialistiche”
+Definire il diagramma a componenti del progetto “vigili urbani”
+Il diagramma di stato
+Il diagramma di stato ha lo scopo di rappresentare, per tutti i casi d’uso, gli stati interni dell’applicazione e le loro variazioni in base all’interazione dell’applicazione coi dati, con l’utente e con l’esterno. In pratica l’applicazione.
+
+Rappresenta quindi un grafo dove i nodi sono gli stati dell’applicazione, e gli archi le transizioni da uno stato all’altro possibili.
+
+Vediamo qui un esempio del diagramma di stato di un sistema di prenotazioni d’albergo.
+
+
+Il diagramma a stati ha lo scopo di definire le precondizioni per entrare in un determinato stato e le azioni possibili per passare ad un altro stato. E’ molto importante perché permette di capire in fase di progettazione se è possibile svolgere determinate azioni e cosa succede in base a quelle possibili.
+
+Nel prossimo esempio vediamo ad esempio il funzionamento di una macchina del caffè con chiavetta tramite un diagramma di stato.
+
+
+Esercizi:
+Definire il diagramma di stato del progetto “prenotazioni albergo”
+Definire il diagramma di stato del progetto “visite specialistiche”
+Definire il diagramma di stato del progetto “vigili urbani” (ricordarsi della login).
+Diagramma di sequenza
+Il diagramma di sequenza rappresenta una sequenza di azioni in cui due o più oggetti (ad esempio due oggetti della stessa applicazione o due applicazioni remote che comunicano attraverso per esempio Internet) collaborano inviandosi richieste e risposte. Qui un esempio client-server:
+
+
+In questo esempio viene descritta una fetch Javascript. Si può notare infatti che la chiamata del caller termina l’esecuzione del Javascript, che rimane poi in attesa del server per riattivarsi di nuovo nella callback. Il diagramma come si vede identifica i soggetti, mostra i flussi dall’alto verso il basso seguendo il tempo. Quando uno dei soggetti si attiva per svolgere una azione si definisce un segmento di attivazione, che può prevedere un messaggio di richiesta (da sinistra verso destra) e di risposta (da destra verso sinistra, tratteggiato). Anche l’utente può essere un soggetto coinvolto.
+
+In questo esempio possiamo vedere un diagramma di sequenza dove un client effettua login e poi carica delle preferenze da un server. Notare come il diagramma serve ad evidenziare sia gli scambi di informazioni, sia il flusso nel tempo di questi scambi.
+
+
+Esercizi:
+Definire il diagramma di sequenza del progetto “prenotazioni albergo”
+Definire il diagramma di sequenza del progetto “visite specialistiche”
+Definire il diagramma di sequenza del progetto “vigili urbani” (ricordarsi della login).
+Pro e contro di UML
+Possiamo riassumere i punti di forza di UML: 
+
+è molto efficace proprio per la sua natura visuale, a permettere di disegnare rapidamente una soluzione, comprenderne punti di forza e debolezza, senza perdere efficacia dal punto di vista della rigorosità. 
+non richiede competenze specifiche per essere letto, quindi diventa una specie di “lingua franca” tra staff tecnico e non tecnico
+è molto veloce da consultare, riducendo i tempi fissi ed i costi di una analisi di un progetto tecnico.
+Ha tuttavia alcuni punti di debolezza, proprio per la sua natura visuale:
+
+richiede molta attenzione ai dettagli per essere realmente efficace;
+può essere molto vincolante per il programmatore: i diagrammi di classe, ad oggetti e di sequenza definiscono molto dettagliatamente cosa dovrà fare, ad un forte livello di dettaglio. Questo potrebbe comportare dei forti vincoli che sono poi quelli del modello Waterfall: un errore di progettazione fatto a monte ha un impatto via via sempre più grande a valle, costringendo sviluppatori e progettisti a scegliere se restare vincolati ed aggirare le problematiche, o a fare la scelta costosa di rivedere la progettazione a monte.
+dipende dalla tecnologia utilizzata (linguaggio, client-server, ecc.) un cambio di paradigma richiede di rivedere l’intero progetto.
+            </p>
+            <a href="#home">Torna alla Home</a>
+         </div>
       </div>
-      <div id="pagina3" class="page">         
-         <div class="row"><a href="#pagina1">Questo è un link a pagina 1</a></div>
-         <div class="row"><a href="#pagina2">Questo è un link a pagina 2</a></div>                  
-         <div class="row">Questo è il contenuto di pagina 3</div>
+
+      <div id="ambienti" class="page">
+         <div class="row">
+            <h2>Lezione: deliverable, ambienti, dati</h2>
+             <p>
+               Deliverable, ambienti, dati
+Deliverable
+I deliverable sono tutti gli artefatti necessari per realizzare la build ovvero il pacchetto applicativo eseguibile in un ambiente di esecuzione,
+
+Una build comprende quattro tipologie di deliverable: codice, assets, configurazioni e librerie. Analizziamoli in dettaglio:
+
+Descrizione	Dipendenze
+Codebase	l’insieme di tutti e soli i sorgenti di un progetto scritti dal programmatore, indipendenti dal contesto di esecuzione. Ogni sorgente rilasciabile (dopo test) è etichettato con una versione, per distinguerlo dagli altri sorgenti precedenti e futuri.	Il codice non deve dipendere da nessun contesto di esecuzione. Esso è per definizione generale ed astratto. Il codice per essere eseguito ha bisogno di librerie, configurazioni ed asset, ma per essere scritto non dipende da loro.
+Librerie	l’insieme di librerie di terze parti, comprensive delle interfacce di programmazione. Ogni libreria è un software, e ogni versione di codebase dipende da una versione specifica delle librerie.	Sono usate dalla codebase, ma la scelta di quali librerie dipende dalle scelte fatte dal programmatore.
+Configurazioni	L’insieme di informazioni che servono per far funzionare il codice in un determinato ambiente. Questo significa che sul pc del programmatore il codice ha bisogno di una configurazione, su un server invece si ha bisogno di un’altra.	Le configurazioni dipendono dall’infrastruttura hardware e software dove viene fatto girare il software. La codebase non deve dipendere da una specifica configurazione.
+Asset	Tutte le risorse digitali a supporto del prodotto software: immagini, font, icone, ecc. ovvero qualunque artefatto che “non è codice”.	Sono usate dalla codebase, sotto forma di simboli a compile time, e sotto forma di risorse digitali a runtime.
+Nel loro insieme queste risorse, che finiscono tutte nel pacchetto applicativo, vengono definite deliverable (in italiano “rilasciabili”) e sono parte del pacchetto che verrà rilasciato per l’installazione per l’esecuzione da parte dell’utente finale.
+
+Ambiente di esecuzione
+L’ambiente di esecuzione gioca un ruolo fondamentale nella fase di runtime: il test può essere influenzato da parametri hardware (cpu, memoria, rete, periferiche, ecc.), software (sistema operativo, tipologia di browser nelle web applications, ecc.) ed infine dai dati. Ad esempio il pc del programmatore dove eseguiamo il test della nostra applicazione web non ha le stesse caratteristiche hardware e software dei sistemi dove verrà eseguita dall’utente finale.
+
+Come vedremo più avanti nei progetti più grandi possono essere previsti inoltre degli ambienti intermedi, via via più complessi, per gestire fasi diverse dello sviluppo del prodotto software.
+
+Per capirlo facciamo l’esempio dell’applicativo di registro elettronico che si usa nelle scuole. E’ una applicazione che quando viene sviluppata dal team di sviluppo utilizzerà un ambiente piccolo e con limitate capacità di calcolo. Quando sarà rilasciata invece sarà installata su un server di grande potenza e capacità, adatto a servire molti utenti in contemporanea.
+
+Dati
+Per poter sviluppare una applicazione il programmatore progetta anche la struttura dei dati su cui dovrà lavorare il software. Essi assumono quindi una particolare rilevanza sia nel design dell’applicazione, sia nel ciclo di vita di sviluppo, perché per capire e verificare se il software funziona senza difetti è necessario predisporre opportunamente non solo una struttura dei dati, ma anche dei set di dati significativi. Vanno gestiti in particolare sia i casi dove i dati sono quelli che ci si aspetta, sia i casi in cui i dati non sono completi, o nella forma corretta, o in qualche altra situazione non prevista.
+
+Le applicazioni elaborano dati provenienti da molte fonti (database, servizi web, file, ecc.) e quindi la gestione dei dati è dipendente da aspetti sia tecnologici (dove si trova il dato, se è in un file, in un database, in un servizio remoto, ecc.) che di design (la struttura che il programmatore ha dato ai dati). Nonostante ciò è fondamentale comprendere che qualsiasi sia la fonte dati e la struttura dei dati stessi essi possono essere classificati in due grandi categorie: i dati di setup ed i dati di produzione, che hanno scopi e ruoli diversi.
+
+Setup	Sono i dati che sono inseriti dall’amministratore (o comunque una utenza che non corrisponde all’utente finale) PRIMA dell’esecuzione della applicazione e servono a fornire informazioni necessarie al corretto funzionamento dell’applicazione.
+Ad esempio nell’applicazione che gestisce il registro di una scuola, i dati di setup sono la composizione delle classi, i nomi degli alunni, le materie e gli insegnanti.	I dati di setup possono essere predisposti a build time o anche a runtime, ma separatamente e prima della normale operatività di utilizzo dell’applicazione. 
+Produzione	Sono i dati elaborati dall’applicazione, direttamente per mezzo o dagli utenti finali. . Ad esempio nell’applicazione di registro elettronico sono i dati sulle presenze alle lezioni, i voti, le informazioni sulle lezioni svolte, le pagelle.	I dati di produzione sono prodotti solo a runtime tramite interazione con l’utente finale.
+La regola generale è che Il codice deve essere indipendente dai dati, ovvero non devono essere mai fatte ipotesi sui dati stessi.
+
+Ad esempio una applicazione di registro elettronico non deve fare ipotesi su quanti alunni avrà una classe o su quali saranno le materie, anzi deve gestire situazioni limite, come classi senza alunni o alunni senza classi. Occorre fare attenzione al fatto che i dati non sono un deliverable ma sono una risorsa esterna al software. Anche in questo caso e proprio per questo, nei progetti più grandi, i set di dati a disposizione per verificare il funzionamento del software possono variare, di solito (ma non sempre) contestualmente al tipo di ambiente di esecuzione del software.
+
+Nello schema seguente si vede in sintesi come e quando appaiono questi oggetti nel ciclo di sviluppo.
+             </p>
+            <a href="#home">Torna alla Home</a>
+         </div>
+      </div>
+
+  
+      <div id="dati" class="page">
+         <div class="row">
+            <h2>wireframe e storyboard</h2>
+           <p>
+            Wireframe e storyboard
+Il disegno dell’interfaccia utente ha assunto nell’ultimo decennio una importanza fondamentale, in quanto si è progressivamente compreso che il modo in cui l’utente interagisce col software è un fattore chiave di successo di un prodotto software. In un sito web ad esempio il modo in cui sono disposti i titoli delle pagine, i testi, le immagini, i pulsanti, le form hanno un enorme impatto sul modo in cui gli utenti riescono a usare in modo più efficace il software, riducendo frustrazione e abbandono. In questo senso si è sviluppata una sottodisciplina dell’ingegneria del software, che possiamo chiamare Usabilità, che prevede studi e sperimentazioni in ambiti come:
+
+ergonomia: capacità di un prodotto di adattarsi all’utente ed al suo modo di gestire la relazione con il computer al fine di migliorare le prestazioni dell’utente. Rientrano nell’ergonomia ad esempio lo studio sulla disposizione dei testi, i font, i colori, le icone al fine di migliorare la familiarità dell’utente con l’applicazione.
+la User experience, la capacità del software di migliorare l’esperienza dell’utente senza frustrazioni. Rientra nella UX ad esempio la capacità del software di non fornire messaggi incomprensibili in caso di errore, di riuscire a spiegare dove l’utente sbaglia, ed in generale nel gestire la componente emotiva e psicologica dell’utente.
+Usabilità: il miglioramento della capacità dell’utente di essere efficace ed efficiente col minor possibile tempo di apprendimento. Quindi non solo facilità d’uso, ma anche la capacità di svolgere compiti complessi con poche azioni.
+In questo senso prendiamo come esempio l’introduzione dell’iPhone nel 2007, una vera e propria pietra miliare in questo settore. La realizzazione di azioni come lo swipe, il tap, il pinch-to-zoom, il feedback aptico, lo schermo capacitivo, ecc. hanno reso possibile l’accesso ai contenuti digitali a milioni di persone fino ad allora escluse per la complessità delle applicazioni, così come negli anni 80-90 lo sono state le interfacce grafiche e i mouse.
+
+Oggi la UX rappresenta un requisito essenziale per il successo di un buon software, e in alcuni casi è obbligatoria per l’approvazione delle app (ad esempio nello store di Apple esistono regole rigide per la dimensione di elementi grafici come pulsanti e tabelle per poter avere l’approvazione di una app).
+
+Per progettare l’interfaccia utente esiste una figura apposita, lo UX designer, che si occupa di elaborare dei documenti visuali per rappresentare l’esperienza dell’utente, i wireframe e le storyboard.
+
+Wireframe
+I wireframe sono dei diagrammi che mostrano come funzionerà una determinata schermata di una applicazione. Lo scopo è quello di presentare e spiegare in modo visuale come comparirà l’applicazione sia agli sviluppatori che al committente finale (ovvero colui che ha richiesto l’applicazione e/o colui che la utilizzerà).
+
+I wireframe mostrano solo il layout dello schermo e il modo in cui è organizzata l’informazione da un punto di vista visuale, con quindi solo le informazioni minime necessarie per mostrare una determinata funzionalità. Essi comprendono quindi gli elementi di interazione di base (label, pulsanti, segnaposto di immagini, ecc.) ma non quelli grafici definitivi.
+
+Si concentrano su cosa fa la schermata , cosa viene visualizzato e su come gli utenti interagiranno con il sistema, ma non su come apparirà realmente la schermata finale.
+
+Qui un esempio di wireframe, quello di Youtube.
+
+
+Il wireframe è una versione a bassa qualità e non è concepito per mostrare la schermata con la grafica definitiva. Serve unicamente per mostrare le informazioni visualizzate e le azioni possibili (dette anche CTA, acronimo di Call to Action) possibili, ed escludono grafica, colori, font, icone, ecc. per evitare di confondere il programmatore.
+
+Qui il wireframe di una app:
+
+
+Sintetizziamo quindi le caratteristiche dei wireframe:
+
+– veloci da realizzare (grazie ai tool e al drag and drop);
+
+– danno una idea precisa già della user experience (UX);
+
+– facili da modificare se qualcosa non va;
+
+– permettono di essere più facilmente discussi nel team e col committente..
+
+Storyboard
+La storyboard è un insieme di wireframe collegati in un flusso per mostrare come si accede da una schermata all’altra. Qui un esempio che mostra varie schermate tra loro collegate.
+
+
+Qui un esempio di un sito web con una struttura gerarchica:
+
+
+Qui la storyboard di una app:
+
+
+Le storyboard guidano quindi il software architect nello sviluppo delle soluzioni software perché permettono di studiare a fondo l’interazione con l’utente.
+
+Esercizi:
+
+Si pensi come esempio ad una schermata di login, che richiede una storyboard che prevede la schermata di login, la pagina di password dimenticata, la pagina di ripristino password, la pagina di cambio password e tutti i messaggi di errore. Provare a progettare la story board.
+Provare a disegnare la storyboard dell’acquisto di prodotti da un ecommerce: la pagina di prodotto (col prezzo e la CTA di acquisto), la pagina del carrello, la pagina di pagamento, la pagina di riepilogo.
+Sintetizziamo qui le caratteristiche delle storyboard
+
+– sono uno strumento visuale che permette di rendersi conto in fase di progettazione di tutte le interazioni con l’utente;
+
+– permettono di capire se ci sono errori concettuali e di progettazione, come flussi mancanti o errati;
+
+– permettono di cambiare velocemente i flussi del programma se non corretti;
+
+– permettono facilmente di essere discussi col team e con il committente.
+           </p>
+            <a href="#home">Torna alla Home</a>
+         </div>
       </div>
    </div>
    <script type="module" src="./index.js"></script>
-
 </body>
 
 </html>
